@@ -84,6 +84,7 @@ alias refreshalias='source ~/.bashrc'
 alias refreshaliases='refreshalias'
 alias ra='refreshalias'
 alias drax='ssh drax'
+alias gitup='git status; git add *; git status; git commit -m "minor change with alias"; git push; '
 
 ## Use a long listing format ##
 alias ll='ls -laFh'
