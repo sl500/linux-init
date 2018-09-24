@@ -3,7 +3,10 @@
 remote=${1}@${2}
 
 #scp ./bash_aliases ${1}@${2}:~/.bash_aliases;
-scp ./bash_aliases ${remote}:~/.bash_aliases;
-scp ./start.html ${remote}:~/start.html;
+
+scp ./files2copy/* ${remote}:~/;
+#scp ./files2copy/.bash_aliases ${remote}:~/;
+#scp ./files2copy/start.html ${remote}:~/;
+
 #ssh ${1}@${2} '. ~/.bashrc';
 ssh ${remote} '. ~/.bashrc';
