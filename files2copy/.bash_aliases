@@ -47,6 +47,8 @@ alias p='ps -f'
 alias sortnr='sort -n -r'
 alias unexport='unset'
 
+alias rmdi='rmdir -v'
+alias rmd='rmdir -v'
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
@@ -60,6 +62,11 @@ alias ....='cd ../../..'
 alias d='cd'
 #alias ~='cd ~'
 alias md='mkdir -pv'
+mdcFunction(){
+	md $1
+	cd $1
+}
+alias mdc='mdcFunction'
 #alias -='cd -'
 alias d-='cd -'
 alias l.='ls -d .* --color=auto'
@@ -85,6 +92,12 @@ alias refreshaliases='refreshalias'
 alias ra='refreshalias'
 alias drax='ssh drax'
 alias gitup='git status; git add *; git status; git commit -m "minor change with alias"; git push; '
+vishFunction(){
+	touch $1
+	chmod +x $1
+        vi $1
+}
+alias vish='vishFunction'
 
 ## Use a long listing format ##
 alias ll='ls -laFh'
