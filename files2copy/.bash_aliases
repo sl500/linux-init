@@ -130,6 +130,9 @@ alias aliases='listaliases'
 alias showalias='listaliases'
 alias showaliases='listaliases'
 alias listalias='listaliases'
+alias lista='listaliases'
+alias showa='listaliases'
+alias sag='listaliases | grep '
 # edit alises
 alias editaliases='vi ~/.bash_aliases'
 alias editalias='editaliases'
@@ -169,6 +172,9 @@ alias mobilia='ssh mbh_wollmux@mobilia'
 alias drax='ssh marcus.bonhagen@drax'
 alias draxi='ssh marcus.bonhagen@draxi'
 
+## SCP 
+#aliases
+alias scpAlias2sbuild='scp /home/marcus.bonhagen/.bash_aliases marcus.bonhagen@kvm-sbuild2:~/.bash_aliases; scp /home/marcus.bonhagen/.bash_aliases marcus.bonhagen@kvm-sbuild:~/.bash_aliases; cp ~/.bash_aliases ~/_D/git/linux-init/files2copy/;'
 ##mr clone all cgits
 alias mr-lhm-update='/home/marcus.bonhagen/_D/cgit/dev-tools/git/mr-lhm-update '
 
