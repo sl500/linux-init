@@ -166,14 +166,18 @@ alias gdiHead2NotStagedIncludingStaged='git diff HEAD '
 
 ## SSH work
 #alias sbuild2='ssh kvm-sbuild2'
-alias sbuild1='ssh kvm-sbuild'
-alias dnsmaster='ssh dnsmaster'
+alias dnsmaster='ssh marcus.bonhagen@dnsmaster'
+alias drax='ssh marcus.bonhagen@drax'
+alias draxi='ssh marcus.bonhagen@draxi'
+alias sbuild1='ssh marcus.bonhagen@kvm-sbuild'
+alias sb1='sbuild1'
 alias dagda='ssh dagda'
+alias dagda2='ssh dagda2'
 alias thanos='ssh thanos'
 alias rested='ssh rested'
 alias mobilia='ssh mbh_wollmux@mobilia'
-alias drax='ssh marcus.bonhagen@drax'
-alias draxi='ssh marcus.bonhagen@draxi'
+alias vm55='ssh mbh_wollmux@cincuentaycinco'
+
 
 ## SCP 
 #aliases
