@@ -157,12 +157,15 @@ alias gpul='git pull '
 alias gcou='git checkout '
 alias gdi='git diff '
 alias gitup='git status; git add *; git status; git commit -m "minor change with alias"; git push; '
+alias gdiStaged2NotStaged='git diff '
+alias gdiHead2Staged='git diff --staged '
+alias gdiHead2NotStagedIncludingStaged='git diff HEAD '
 
 
 #######  LIMUX specific #########
 
 ## SSH work
-alias sbuild2='ssh kvm-sbuild2'
+#alias sbuild2='ssh kvm-sbuild2'
 alias sbuild1='ssh kvm-sbuild'
 alias dnsmaster='ssh dnsmaster'
 alias dagda='ssh dagda'
@@ -174,9 +177,11 @@ alias draxi='ssh marcus.bonhagen@draxi'
 
 ## SCP 
 #aliases
-alias scpAlias2sbuild='scp /home/marcus.bonhagen/.bash_aliases marcus.bonhagen@kvm-sbuild2:~/.bash_aliases; scp /home/marcus.bonhagen/.bash_aliases marcus.bonhagen@kvm-sbuild:~/.bash_aliases; cp ~/.bash_aliases ~/_D/git/linux-init/files2copy/;'
+#alias scpAlias2sbuild='scp /home/marcus.bonhagen/.bash_aliases marcus.bonhagen@kvm-sbuild2:~/.bash_aliases; scp /home/marcus.bonhagen/.bash_aliases marcus.bonhagen@kvm-sbuild:~/.bash_aliases; cp ~/.bash_aliases ~/_D/git/linux-init/files2copy/;'
+alias scpAlias2sbuild='scp /home/marcus.bonhagen/.bash_aliases marcus.bonhagen@kvm-sbuild:~/.bash_aliases; cp ~/.bash_aliases ~/_D/git/linux-init/files2copy/;'
 #vimrc
-alias scpVimrc2sbuild='scp /home/marcus.bonhagen/.vimrc marcus.bonhagen@kvm-sbuild2:~/.vimrc; scp /home/marcus.bonhagen/.vimrc marcus.bonhagen@kvm-sbuild:~/.vimrc; cp ~/.vimrc ~/_D/git/linux-init/files2copy/;'
+#alias scpVimrc2sbuild='scp /home/marcus.bonhagen/.vimrc marcus.bonhagen@kvm-sbuild2:~/.vimrc; scp /home/marcus.bonhagen/.vimrc marcus.bonhagen@kvm-sbuild:~/.vimrc; cp ~/.vimrc ~/_D/git/linux-init/files2copy/;'
+alias scpVimrc2sbuild='scp /home/marcus.bonhagen/.vimrc marcus.bonhagen@kvm-sbuild:~/.vimrc; cp ~/.vimrc ~/_D/git/linux-init/files2copy/;'
 
 ##mr clone all cgits
 alias mr-lhm-update='/home/marcus.bonhagen/_D/cgit/dev-tools/git/mr-lhm-update '
