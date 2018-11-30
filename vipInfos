@@ -1,0 +1,47 @@
+https://public.etherpad-mozilla.org/p/msprojectlibre
+
+sudo aptitude update -y; sudo safe-upgrade -y; sudo apt install -y virtualbox-dkms virtualbox-guest-dkms virtualbox-guest-additions-iso virtualbox-guest-utils virtualbox-guest-x11; sudo dpkg-reconfigure virtualbox-guest-dkms
+
+perl -i -pei
+
+perl -pi.bak -e 's/blue/red/g' *_classification.dat
+perl -pi.bak -e 's/Next/crabs/g' XXX metadata.desktop
+
+
+cat /usr/share/plasma/desktoptheme/breeze-light/metadata.desktop | grep  defaultWallpaperTheme;
+cat /usr/share/plasma/desktoptheme/breeze-dark/metadata.desktop | grep  defaultWallpaperTheme;
+cat /usr/share/plasma/desktoptheme/kubuntu/metadata.desktop | grep  defaultWallpaperTheme;
+cat /usr/share/plasma/desktoptheme/limux/metadata.desktop | grep  defaultWallpaperTheme;
+cat /usr/share/plasma/desktoptheme/default/metadata.desktop | grep  defaultWallpaperTheme;
+
+
+sudo perl -i -p -e 's/defaultWallpaperTheme=Next/defaultWallpaperTheme=MBSUBH/g' /usr/share/plasma/desktoptheme/breeze-light/metadata.desktop;
+sudo perl -i -p -e 's/defaultWallpaperTheme=Next/defaultWallpaperTheme=MBSUBH/g' /usr/share/plasma/desktoptheme/breeze-dark/metadata.desktop;
+sudo perl -i -p -e 's/defaultWallpaperTheme=Next/defaultWallpaperTheme=MBSUBH/g' /usr/share/plasma/desktoptheme/kubuntu/metadata.desktop;
+sudo perl -i -p -e 's/defaultWallpaperTheme=Next/defaultWallpaperTheme=MBSUBH/g' /usr/share/plasma/desktoptheme/limux/metadata.desktop;
+sudo perl -i -p -e 's/defaultWallpaperTheme=Next/defaultWallpaperTheme=MBSUBH/g' /usr/share/plasma/desktoptheme/default/metadata.desktop;
+
+sudo perl -pi.bak -e 's/defaultWallpaperTheme=MBSUBH/defaultWallpaperTheme=crabs/g' /usr/share/plasma/desktoptheme/breeze-light/metadata.desktop;
+sudo perl -pi.bak -e 's/defaultWallpaperTheme=MBSUBH/defaultWallpaperTheme=lightbulb/g' /usr/share/plasma/desktoptheme/breeze-dark/metadata.desktop;
+sudo perl -pi.bak -e 's/defaultWallpaperTheme=MBSUBH/defaultWallpaperTheme=Grey/g' /usr/share/plasma/desktoptheme/kubuntu/metadata.desktop;
+sudo perl -pi.bak -e 's/defaultWallpaperTheme=MBSUBH/defaultWallpaperTheme=Kite/g' /usr/share/plasma/desktoptheme/limux/metadata.desktop;
+sudo perl -pi.bak -e 's/defaultWallpaperTheme=MBSUBH/defaultWallpaperTheme=Path/g' /usr/share/plasma/desktoptheme/default/metadata.desktop;
+
+cat /usr/share/plasma/desktoptheme/breeze-light/metadata.desktop | grep  defaultWallpaperTheme;cat /usr/share/plasma/desktoptheme/breeze-dark/metadata.desktop | grep  defaultWallpaperTheme;cat /usr/share/plasma/desktoptheme/kubuntu/metadata.desktop | grep  defaultWallpaperTheme;cat /usr/share/plasma/desktoptheme/limux/metadata.desktop | grep  defaultWallpaperTheme;cat /usr/share/plasma/desktoptheme/default/metadata.desktop | grep  defaultWallpaperTheme;
+
+sudo perl -i -p -e 's/defaultWallpaperTheme=Next/defaultWallpaperTheme=MBSUBH/g' /usr/share/plasma/desktoptheme/breeze-light/metadata.desktop;sudo perl -i -p -e 's/defaultWallpaperTheme=Next/defaultWallpaperTheme=MBSUBH/g' /usr/share/plasma/desktoptheme/breeze-dark/metadata.desktop;sudo perl -i -p -e 's/defaultWallpaperTheme=Next/defaultWallpaperTheme=MBSUBH/g' /usr/share/plasma/desktoptheme/kubuntu/metadata.desktop;sudo perl -i -p -e 's/defaultWallpaperTheme=Next/defaultWallpaperTheme=MBSUBH/g' /usr/share/plasma/desktoptheme/limux/metadata.desktop;sudo perl -i -p -e 's/defaultWallpaperTheme=Next/defaultWallpaperTheme=MBSUBH/g' /usr/share/plasma/desktoptheme/default/metadata.desktop;
+
+sudo perl -pi.bak -e 's/defaultWallpaperTheme=MBSUBH/defaultWallpaperTheme=crabs/g' /usr/share/plasma/desktoptheme/breeze-light/metadata.desktop;sudo perl -pi.bak -e 's/defaultWallpaperTheme=MBSUBH/defaultWallpaperTheme=lightbulb/g' /usr/share/plasma/desktoptheme/breeze-dark/metadata.desktop;sudo perl -pi.bak -e 's/defaultWallpaperTheme=MBSUBH/defaultWallpaperTheme=Grey/g' /usr/share/plasma/desktoptheme/kubuntu/metadata.desktop;sudo perl -pi.bak -e 's/defaultWallpaperTheme=MBSUBH/defaultWallpaperTheme=Kite/g' /usr/share/plasma/desktoptheme/limux/metadata.desktop;sudo perl -pi.bak -e 's/defaultWallpaperTheme=MBSUBH/defaultWallpaperTheme=Path/g' /usr/share/plasma/desktoptheme/default/metadata.desktop;
+
+
+
+
+cp backup zurück
+
+sudo cp -f /usr/share/plasma/desktoptheme/breeze-light/metadata.desktop.bak /usr/share/plasma/desktoptheme/breeze-light/metadata.desktop;
+sudo cp -f /usr/share/plasma/desktoptheme/breeze-dark/metadata.desktop.bak /usr/share/plasma/desktoptheme/breeze-dark/metadata.desktop;
+sudo cp -f /usr/share/plasma/desktoptheme/kubuntu/metadata.desktop.bak /usr/share/plasma/desktoptheme/kubuntu/metadata.desktop;
+sudo cp -f /usr/share/plasma/desktoptheme/limux/metadata.desktop.bak /usr/share/plasma/desktoptheme/limux/metadata.desktop;
+sudo cp -f /usr/share/plasma/desktoptheme/default/metadata.desktop.bak /usr/share/plasma/desktoptheme/default/metadata.desktop;
+
+sudo cp -f /usr/share/plasma/desktoptheme/breeze-light/metadata.desktop.bak /usr/share/plasma/desktoptheme/breeze-light/metadata.desktop; sudo cp -f /usr/share/plasma/desktoptheme/breeze-dark/metadata.desktop.bak /usr/share/plasma/desktoptheme/breeze-dark/metadata.desktop; sudo cp -f /usr/share/plasma/desktoptheme/kubuntu/metadata.desktop.bak /usr/share/plasma/desktoptheme/kubuntu/metadata.desktop; sudo cp -f /usr/share/plasma/desktoptheme/limux/metadata.desktop.bak /usr/share/plasmadesktoptheme/limux/metadata.desktop; sudo cp -f /usr/share/plasma/desktoptheme/default/metadata.desktop.bak /usr/share/plasma/desktoptheme/default/metadata.desktop;

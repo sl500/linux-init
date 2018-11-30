@@ -1,0 +1,103 @@
+#!/bin/bash
+
+hilfeAnzeigen=""
+if [ $# -eq 0 ] 
+        then
+                echo "Keine Parameter mitgegeben";
+                echo ""
+		hilfeAnzeigen="true"
+fi
+
+if [ "$1" == "--help" -o "$1" == "-help" -o "$1" == "help" -o "$1" == "man" -o "$1" == "manual" -o "$1" == "-h" -o "$1" == "hilfe" -o "$hilfeAnzeigen" == "true" ]    
+        then
+                echo "mscoall v0.1";
+                echo "Parameter 1 = Quelle / Source"
+                echo "Parameter 2 = Ziel /Pfad / Path / Destination ; leer = ~ "
+                echo "Bei Parameter 2 wird ~ am Pfadbeginn automatisch ersetzt"
+                echo " "
+		echo "Es werden nacheinander alle intern eingetragenen Zielrechner abgefragt ob:"
+		echo "die Dateien da hinsollen (j)"
+		echo "nicht hin sollen (n) oder"
+		echo "ein anderer Pfad benutzt werden soll (p)"
+		echo "wenn ein anderer Pfad genommen werden soll, dann wird dieser Abgefragt"
+        exit 0;
+fi
+
+
+
+
+
+function mbhScpCopy() {
+
+read -p "${mhost}, willst Du hierhin verteilen? (j/n/p für pfadangabe): " mcopy
+
+if [ "$mcopy" = "j" ]
+  then
+	if [ -z "$2" ]
+		then
+			echo "-z $2 then"
+			scp $1 ${muser}@${mhost}:~
+		else
+			echo "-z $2 else"
+			#if [[ "$2" == ~* ]]
+			if [[ "$2" == /home/${USER}/* ]]
+				then
+					lengthUsername=${#USER};
+					offset=6+${lengthUsername};
+					#echo "test if then";
+					#echo "hierhin wird kopiert ~${2:${offset}}";
+					#echo "${2:1}";
+					scp $1 ${muser}@${mhost}:~${2:${offset}}
+				else
+					echo "test if else"
+					scp $1 ${muser}@${mhost}:${2}
+			fi
+	fi		
+fi
+
+if [ "$mcopy" = "p" ]
+  then
+	read -p 'Bitte den abweichenden Pfad angeben:": ' path
+
+	#wieder path auf ~ prüfen und ersetzen
+	if [[ "$path" == /home/${USER}/* ]]
+	then
+		lengthUsername=${#USER};
+		offset=6+${lengthUsername};
+		scp $1 ${muser}@${mhost}:~${path:${offset}}
+	else
+		scp $1 ${muser}@${mhost}:${path}
+	fi
+fi
+
+}
+
+#build2
+mhost="drax"
+muser="marcus.bonhagen"
+
+mbhScpCopy $1 $2
+
+#build2
+mhost="kvm-sbuild2"
+muser="marcus.bonhagen"
+
+mbhScpCopy $1 $2
+
+#build
+mhost="kvm-sbuild"
+muser="marcus.bonhagen"
+
+mbhScpCopy $1 $2
+
+#dagda2
+mhost="dagda2"
+muser="mbh_wollmux"
+
+mbhScpCopy $1 $2
+
+#cincuentaycinco
+mhost="cincuentaycinco"
+
+mbhScpCopy $1 $2
+

@@ -1,0 +1,61 @@
+#!/bin/bash
+
+#mbhFiF = find @2 -type f -iname @1 
+#mbhFiD = find @2 -type d -iname @1 
+#mbhFi = find @3 -type @1 -iname @2 
+
+#if [ "$1" == "f" -o "$1" == "d" ]; 
+if [ $# -eq 0 ]
+	then
+		echo "keine Parameter mitgegeben";
+		exit 0;
+fi
+
+if [ "$1" == "--help" -o "$1" == "-help" -o "$1" == "help" -o "$1" == "man" -o "$1" == "manual" -o "$1" == "-h" -o "$1" == "hilfe" ]      
+	then
+		echo "mfind v0.1";
+		echo "Wenn nur ein paramter -> Suche im aktuellen Verzeichnis "
+		echo "find . -iname param1"
+		echo " "
+		echo "Wenn Paramter 1 Länge=1 und kein param3 -> Suche im aktuellen Verzeichnis nach type param1"
+		echo "find . -type param1 -iname param2"
+		echo " "
+		echo "Wenn Paramter 1 Länge=1 und param3 existiert -> Suche Pfad param3 Verzeichnis nach type param1"
+		echo "find param3 -type param1 -iname param2"
+		echo " "
+	exit 0;
+fi
+
+if [ "${#1}" -gt 1 ]; 
+then
+	echo "param1 länger als 1"
+	if [ -n "$2" ];
+	then
+		echo "find param2 -iname param1"
+		find "$2" -iname "$1" 
+		exit 0;
+	else
+		echo "find . -iname param 1"
+		find . -iname "$1" 
+		exit 0;
+	fi
+	exit 0;	
+else # param 1 länge gleich 1 
+	echo "param1 länge 1"
+	if [ -n "$3" ];
+	then
+		echo "param3 !Null"
+		echo "find param3 -type param1 -iname param2"
+		find "$3" -type "$1" -iname "$2" 
+		exit 0;
+	else
+		echo "param3 Null"
+		echo "find . -type param 1 -iname param2"
+		find . -type "$1" -iname "$2" 
+		exit 0;
+	fi
+	exit 0;
+
+fi
+
+
