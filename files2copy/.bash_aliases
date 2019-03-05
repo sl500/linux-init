@@ -1,4 +1,4 @@
-# v0.2.1 20190305 inklusive leornian digital ocean
+# v0.2.2 20190305 inklusive lex-pc docker
 
 # CMD ls
 alias ls='ls --color=auto'
@@ -125,6 +125,17 @@ alias vish='makeBashScriptFileReadyToGo'
 
 ## SSH verbindungen
 #Home
+#leornian
+alias leornian='ssh root@leornian.rocks'
+#lex-pc
+alias leornian='ssh lex@lex-pc'
+#lex-x230
+alias lex='ssh lex@lex-x230'
+#nasmbo
+alias leornian='ssh root@nasmbo'
+#pi
+alias raspi='ssh pi@raspberrypi'
+
 #####################################
 
 ## Work on Aliases
@@ -173,9 +184,15 @@ alias gdiHead2NotStagedIncludingStaged='git diff HEAD '
 
 
 ## DOCKER 
-alias lsi="docker image ls"
-alias lsc="docker container ls --all"
+# image
+alias dils="docker image ls"
+alias dirm="sudo docker image rm "
+# container
+alias dcls="docker container ls --all"
+alias dcrm="sudo docker container rm "
+# misc
 alias dockerYmlU=". dockerYmlUp"
+
 
 #######  LIMUX specific #########
 
