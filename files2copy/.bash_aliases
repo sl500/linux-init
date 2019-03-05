@@ -1,12 +1,16 @@
-# v0.2.0 20181130
+# v0.2.1 20190305 inklusive leornian digital ocean
 
 # CMD ls
 alias ls='ls --color=auto'
+
 alias ll='ls -l'      #long list
 alias llh='ls -lh'      #long list
+alias llg='ls -lh | grep'      #long list
+
 alias la='ls -la'      #long list all
 alias lah='ls -lah'      #long list all
 alias lag='ls -lah | grep '      #long list all
+
 #alias l.='ls -d .*' 
 #...  , the common ones I use a lot shortened for rapid fire usage
 #alias l='ls -lFh'     #size,show type,human readable
@@ -133,6 +137,7 @@ alias listalias='listaliases'
 alias lista='listaliases'
 alias showa='listaliases'
 alias sag='listaliases | grep '
+alias sa="listaliases"
 # edit alises
 alias editaliases='vi ~/.bash_aliases'
 alias editalias='editaliases'
@@ -141,6 +146,11 @@ alias ea='editaliases'
 alias refreshaliases='source ~/.bashrc'
 alias refreshalias='refreshaliases'
 alias ra='refreshalias'
+# edit bashrc
+alias eb="vi ~/.bashrc"
+# refresh bashrc
+alias rb=". ~/.bashrc"
+
 
 ## GIT
 alias gcl='git clone '
@@ -161,6 +171,11 @@ alias gdiStaged2NotStaged='git diff '
 alias gdiHead2Staged='git diff --staged '
 alias gdiHead2NotStagedIncludingStaged='git diff HEAD '
 
+
+## DOCKER 
+alias lsi="docker image ls"
+alias lsc="docker container ls --all"
+alias dockerYmlU=". dockerYmlUp"
 
 #######  LIMUX specific #########
 
@@ -202,4 +217,5 @@ alias mrepolist='lhm-reprepro list /srv/user-repos/repo-mbh walhalla'
 alias mreporm='lhm-reprepro removesrc /srv/user-repos/repo-mbh walhalla '
 alias mrepoad='lhm-reprepro include /srv/user-repos/repo-mbh walhalla '
 alias mrepoaddeb='lhm-reprepro includedeb /srv/user-repos/repo-mbh walhalla '
+
 
