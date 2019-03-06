@@ -1,4 +1,4 @@
-# v0.2.2 20190305 inklusive lex-pc docker
+# v0.2.3 20190306 inklusive lex-x230, pc, leornian, docker vagrant
 
 # CMD ls
 alias ls='ls --color=auto'
@@ -11,7 +11,8 @@ alias la='ls -la'      #long list all
 alias lah='ls -lah'      #long list all
 alias lag='ls -lah | grep '      #long list all
 
-#alias l.='ls -d .*' 
+alias l.='ls -d .*' 
+
 #...  , the common ones I use a lot shortened for rapid fire usage
 #alias l='ls -lFh'     #size,show type,human readable
 #alias la='ls -lAFh'   #long list,show almost all,show type,human readable
@@ -28,6 +29,7 @@ alias lag='ls -lah | grep '      #long list all
 alias d='cd'
 alias d-='cd -'
 alias d~='cd ~'
+alias ~='cd ~'
 alias cd..='cd ..'
 alias cd.='cd ..'
 alias ..='cd ..'
@@ -79,6 +81,7 @@ alias duf='du -sh *'
 # CMD misc
 alias t='tail -f'
 #alias zshrc='${=EDITOR} ~/.zshrc' # Quick access to the ~/.zshrc file
+#alias bashrc='${=EDITOR} ~/.bashrc' # Quick access to the ~/.zshrc file
 #alias hgrep="fc -El 0 | grep"
 alias help='man'
 alias p='ps -f'
@@ -127,13 +130,18 @@ alias vish='makeBashScriptFileReadyToGo'
 #Home
 #leornian
 alias leornian='ssh root@leornian.rocks'
+alias leo='ssh root@leornian.rocks'
+alias mleornian='mosh root@leornian.rocks'
+alias mleo='mleornian'
 #lex-pc
-alias leornian='ssh lex@lex-pc'
+alias lexpc='ssh lex@lex-pc'
 #lex-x230
-alias lex='ssh lex@lex-x230'
+alias lextp='ssh lex@lex-x230'
 #nasmbo
-alias leornian='ssh root@nasmbo'
+alias nasmbo='ssh root@nasmbo'
+alias nasmboip='ssh root@192.168.0.207'
 #pi
+alias pi='ssh pi@raspberrypi'
 alias raspi='ssh pi@raspberrypi'
 
 #####################################
@@ -182,6 +190,7 @@ alias gdiStaged2NotStaged='git diff '
 alias gdiHead2Staged='git diff --staged '
 alias gdiHead2NotStagedIncludingStaged='git diff HEAD '
 
+### PROGS
 
 ## DOCKER 
 # image
@@ -192,6 +201,15 @@ alias dcls="docker container ls --all"
 alias dcrm="sudo docker container rm "
 # misc
 alias dockerYmlU=". dockerYmlUp"
+
+
+## Vagrant virtual machine
+alias v='vagrant'
+alias vu='vagrant up'
+alias vn='vagrant init'
+alias vh='vagrant halt'
+alias vs='vagrant ssh'
+alias vr='vagrant reload'
 
 
 #######  LIMUX specific #########
