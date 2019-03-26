@@ -1,6 +1,6 @@
 # v0.2.3 20190306 inklusive lex-x230, pc, leornian, docker vagrant
 
-# CMD ls
+## CMD LS
 alias ls='ls --color=auto'
 
 alias ll='ls -l'      #long list
@@ -25,7 +25,7 @@ alias l.='ls -d .*'
 ## Use a long listing format ##
 #alias ll='ls -laFh'
 
-# CMD cd - navigation
+## CMD CD - navigation
 alias d='cd'
 alias d-='cd -'
 alias d~='cd ~'
@@ -42,7 +42,7 @@ alias ..4='cd ../../../..'
 alias ..5='cd ../../../../..'
 alias ..6='cd ../../../../../..'
 
-# CMD file folder manipulation
+## CMD file folder manipulation
 alias mv='mv -i'
 alias cp='cp -i'
 alias rm='rm -i'
@@ -53,18 +53,18 @@ alias mkd='mkdir'
 alias mkdp='mkdir -pv'
 alias md='mkdir -pv'
 
-# CMD grep
+## CMD GREP
 alias grep='grep --color'
 alias grepm='grep -rIPni '
 alias gm='grepm '
 #alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
 
-# CMD history 
+## CMD HISTORY 
 alias h='history'
 alias hg='history | grep'
 alias hl='history | less'
 
-# CMD find
+## CMD FIND
 alias fd='sudo find . -type d -name'
 alias ff='sudo find . -type f -name'
 alias fdi='sudo find . -type d -iname'
@@ -74,11 +74,11 @@ alias ffr='sudo find / -type f -name'
 alias fdir='sudo find / -type d -iname'
 alias ffir='sudo find / -type f -iname'
 
-# CMD du disk usage
+## CMD DU disk usage
 alias dud='du -d 1 -h'
 alias duf='du -sh *'
 
-# CMD misc
+## CMD MISC
 alias t='tail -f'
 #alias zshrc='${=EDITOR} ~/.zshrc' # Quick access to the ~/.zshrc file
 #alias bashrc='${=EDITOR} ~/.bashrc' # Quick access to the ~/.zshrc file
@@ -100,7 +100,7 @@ alias unexport='unset'
 #alias NUL="> /dev/null 2>&1"
 #alias P="2>&1| pygmentize -l pytb"
 
-#MBH
+##MBH
 makeDirAndGoIn(){
 	mkdir -pv $1
 	cd $1
@@ -146,7 +146,7 @@ alias raspi='ssh pi@raspberrypi'
 
 #####################################
 
-## Work on Aliases
+## Work on ALIASES
 # list aliases
 alias listaliases='cat ~/.bash_aliases'
 alias aliases='listaliases'
@@ -182,11 +182,12 @@ alias gta='git tag '
 alias gput='git push --tag '
 alias glo='git log '
 alias gloa='git log -p '
+alias gfe='git fetch '
 alias gpul='git pull '
-alias gcou='git checkout '
+alias gch='git checkout '
 alias gdi='git diff '
-alias gitup='git status; git add *; git status; git commit -m "minor change with alias"; git push; '
-alias gdiStaged2NotStaged='git diff '
+alias gitup='git status; git add *; git status; git commit -m "minor change"; git push; '
+alias gdiStaged2NotStaged='gdi'
 alias gdiHead2Staged='git diff --staged '
 alias gdiHead2NotStagedIncludingStaged='git diff HEAD '
 
@@ -227,6 +228,8 @@ alias thanos='ssh thanos'
 alias rested='ssh rested'
 alias mobilia='ssh mbh_wollmux@mobilia'
 alias vm55='ssh mbh_wollmux@cincuentaycinco'
+alias mbhvts1='ssh limux@mbhvts1'
+alias mbhvts2='ssh mbhvts2'
 
 
 ## SCP 
@@ -237,17 +240,17 @@ alias scpAlias2sbuild='scp /home/marcus.bonhagen/.bash_aliases marcus.bonhagen@k
 #alias scpVimrc2sbuild='scp /home/marcus.bonhagen/.vimrc marcus.bonhagen@kvm-sbuild2:~/.vimrc; scp /home/marcus.bonhagen/.vimrc marcus.bonhagen@kvm-sbuild:~/.vimrc; cp ~/.vimrc ~/_D/git/linux-init/files2copy/;'
 alias scpVimrc2sbuild='scp /home/marcus.bonhagen/.vimrc marcus.bonhagen@kvm-sbuild:~/.vimrc; cp ~/.vimrc ~/_D/git/linux-init/files2copy/;'
 
-##mr clone all cgits
+## MR clone all cgits
 alias mr-lhm-update='/home/marcus.bonhagen/_D/cgit/dev-tools/git/mr-lhm-update '
 
-##quilt
+## QUILT
 alias qpu='quilt push -a'
 alias qpo='quilt pop -a'
 alias qre='quilt refresh'
 alias qad='quilt add '
 alias qnu='quilt new '
 
-##userrepo
+## USERREPO
 alias mrepolist='lhm-reprepro list /srv/user-repos/repo-mbh walhalla'
 alias mreporm='lhm-reprepro removesrc /srv/user-repos/repo-mbh walhalla '
 alias mrepoad='lhm-reprepro include /srv/user-repos/repo-mbh walhalla '
