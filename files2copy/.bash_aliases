@@ -1,4 +1,4 @@
-# v0.2.3 20190306 inklusive lex-x230, pc, leornian, docker vagrant
+# v0.2.4 20190326 inklusive kvm-sbuild2 neu; git add ohne .pc von quilt; mit nn 
 
 ## CMD LS
 alias ls='ls --color=auto'
@@ -107,6 +107,7 @@ makeDirAndGoIn(){
 }
 alias mdc='makeDirAndGoIn'
 alias n='. n'
+alias nn='. nn'
 alias pip='pip3'
 alias mbhdate='date +" "%F" "%a" "%H:%M:%S" "KW:%V" "'
 makeBashScriptFileReadyToGo(){
@@ -174,7 +175,10 @@ alias rb=". ~/.bashrc"
 ## GIT
 alias gcl='git clone '
 alias gst='git status '
-alias gad='git add * '
+#alias gad='git add * ' # sollte '.' statt '*' haben laut TBH
+alias gad='gadall'
+alias gada='gadall'
+alias gadall='git add --all -- :!.pc/' #without .pc from quilt
 alias gadf='git add '
 alias gco='git commit -m '
 alias gpu='git push '
