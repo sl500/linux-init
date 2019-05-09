@@ -18,14 +18,20 @@ endif
 
 " F4 alles zu HEX, F5 alles zurück
 noremap <F4> :%!xxd<CR>
-inoremap <F4> <C-o>:%!xxd<CR>
-cnoremap <F4> <C-c>:%!xxd<CR>
-
 noremap <F5> :%!xxd -r<CR>
+inoremap <F4> <C-o>:%!xxd<CR>
 inoremap <F5> <C-o>:%!xxd -r<CR>
+cnoremap <F4> <C-c>:%!xxd<CR>
 cnoremap <F5> <C-c>:%!xxd -r<CR>
 
 " F6 Zeilennummern anzeigen F6
 noremap <F6> :set number!<CR>
 inoremap <F6> <C-o>:set number!<CR>
 cnoremap <F6> <C-c>:set number!<CR>
+
+" F7 Delete first charackter
+noremap <F7> :%s/^.\{0,1\}//<CR>
+inoremap <F7> <C-o>:%s/^.\{0,1\}//<CR>
+cnoremap <F7> <C-c>:%s/^.\{0,1\}//<CR>
+
+

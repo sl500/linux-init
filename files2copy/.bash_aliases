@@ -1,13 +1,18 @@
-# v0.2.0 20181130
+# v0.2.4 20190326 inklusive kvm-sbuild2 neu; git add ohne .pc von quilt; mit nn 
 
-# CMD ls
+## CMD LS
 alias ls='ls --color=auto'
+
 alias ll='ls -l'      #long list
 alias llh='ls -lh'      #long list
+alias llg='ls -lh | grep'      #long list
+
 alias la='ls -la'      #long list all
 alias lah='ls -lah'      #long list all
 alias lag='ls -lah | grep '      #long list all
-#alias l.='ls -d .*' 
+
+alias l.='ls -d .*' 
+
 #...  , the common ones I use a lot shortened for rapid fire usage
 #alias l='ls -lFh'     #size,show type,human readable
 #alias la='ls -lAFh'   #long list,show almost all,show type,human readable
@@ -20,10 +25,11 @@ alias lag='ls -lah | grep '      #long list all
 ## Use a long listing format ##
 #alias ll='ls -laFh'
 
-# CMD cd - navigation
+## CMD CD - navigation
 alias d='cd'
 alias d-='cd -'
 alias d~='cd ~'
+alias ~='cd ~'
 alias cd..='cd ..'
 alias cd.='cd ..'
 alias ..='cd ..'
@@ -36,7 +42,7 @@ alias ..4='cd ../../../..'
 alias ..5='cd ../../../../..'
 alias ..6='cd ../../../../../..'
 
-# CMD file folder manipulation
+## CMD file folder manipulation
 alias mv='mv -i'
 alias cp='cp -i'
 alias rm='rm -i'
@@ -47,18 +53,18 @@ alias mkd='mkdir'
 alias mkdp='mkdir -pv'
 alias md='mkdir -pv'
 
-# CMD grep
+## CMD GREP
 alias grep='grep --color'
 alias grepm='grep -rIPni '
 alias gm='grepm '
 #alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
 
-# CMD history 
+## CMD HISTORY 
 alias h='history'
 alias hg='history | grep'
 alias hl='history | less'
 
-# CMD find
+## CMD FIND
 alias fd='sudo find . -type d -name'
 alias ff='sudo find . -type f -name'
 alias fdi='sudo find . -type d -iname'
@@ -68,13 +74,14 @@ alias ffr='sudo find / -type f -name'
 alias fdir='sudo find / -type d -iname'
 alias ffir='sudo find / -type f -iname'
 
-# CMD du disk usage
+## CMD DU disk usage
 alias dud='du -d 1 -h'
 alias duf='du -sh *'
 
-# CMD misc
+## CMD MISC
 alias t='tail -f'
 #alias zshrc='${=EDITOR} ~/.zshrc' # Quick access to the ~/.zshrc file
+#alias bashrc='${=EDITOR} ~/.bashrc' # Quick access to the ~/.zshrc file
 #alias hgrep="fc -El 0 | grep"
 alias help='man'
 alias p='ps -f'
@@ -93,13 +100,14 @@ alias unexport='unset'
 #alias NUL="> /dev/null 2>&1"
 #alias P="2>&1| pygmentize -l pytb"
 
-#MBH
+##MBH
 makeDirAndGoIn(){
 	mkdir -pv $1
 	cd $1
 }
 alias mdc='makeDirAndGoIn'
 alias n='. n'
+alias nn='. nn'
 alias pip='pip3'
 alias mbhdate='date +" "%F" "%a" "%H:%M:%S" "KW:%V" "'
 makeBashScriptFileReadyToGo(){
@@ -121,9 +129,25 @@ alias vish='makeBashScriptFileReadyToGo'
 
 ## SSH verbindungen
 #Home
+#leornian
+alias leornian='ssh root@leornian.rocks'
+alias leo='ssh root@leornian.rocks'
+alias mleornian='mosh root@leornian.rocks'
+alias mleo='mleornian'
+#lex-pc
+alias lexpc='ssh lex@lex-pc'
+#lex-x230
+alias lextp='ssh lex@lex-x230'
+#nasmbo
+alias nasmbo='ssh root@nasmbo'
+alias nasmboip='ssh root@192.168.0.207'
+#pi
+alias pi='ssh pi@raspberrypi'
+alias raspi='ssh pi@raspberrypi'
+
 #####################################
 
-## Work on Aliases
+## Work on ALIASES
 # list aliases
 alias listaliases='cat ~/.bash_aliases'
 alias aliases='listaliases'
@@ -133,6 +157,7 @@ alias listalias='listaliases'
 alias lista='listaliases'
 alias showa='listaliases'
 alias sag='listaliases | grep '
+alias sa="listaliases"
 # edit alises
 alias editaliases='vi ~/.bash_aliases'
 alias editalias='editaliases'
@@ -141,11 +166,19 @@ alias ea='editaliases'
 alias refreshaliases='source ~/.bashrc'
 alias refreshalias='refreshaliases'
 alias ra='refreshalias'
+# edit bashrc
+alias eb="vi ~/.bashrc"
+# refresh bashrc
+alias rb=". ~/.bashrc"
+
 
 ## GIT
 alias gcl='git clone '
 alias gst='git status '
-alias gad='git add * '
+#alias gad='git add * ' # sollte '.' statt '*' haben laut TBH
+alias gad='gadall'
+alias gada='gadall'
+alias gadall='git add --all -- :!.pc/' #without .pc from quilt
 alias gadf='git add '
 alias gco='git commit -m '
 alias gpu='git push '
@@ -153,13 +186,35 @@ alias gta='git tag '
 alias gput='git push --tag '
 alias glo='git log '
 alias gloa='git log -p '
+alias gfe='git fetch '
 alias gpul='git pull '
-alias gcou='git checkout '
+alias gch='git checkout '
 alias gdi='git diff '
-alias gitup='git status; git add *; git status; git commit -m "minor change with alias"; git push; '
-alias gdiStaged2NotStaged='git diff '
+alias gitup='git status; git add *; git status; git commit -m "minor change"; git push; '
+alias gdiStaged2NotStaged='gdi'
 alias gdiHead2Staged='git diff --staged '
 alias gdiHead2NotStagedIncludingStaged='git diff HEAD '
+
+### PROGS
+
+## DOCKER 
+# image
+alias dils="docker image ls"
+alias dirm="sudo docker image rm "
+# container
+alias dcls="docker container ls --all"
+alias dcrm="sudo docker container rm "
+# misc
+alias dockerYmlU=". dockerYmlUp"
+
+
+## Vagrant virtual machine
+alias v='vagrant'
+alias vu='vagrant up'
+alias vn='vagrant init'
+alias vh='vagrant halt'
+alias vs='vagrant ssh'
+alias vr='vagrant reload'
 
 
 #######  LIMUX specific #########
@@ -177,6 +232,8 @@ alias thanos='ssh thanos'
 alias rested='ssh rested'
 alias mobilia='ssh mbh_wollmux@mobilia'
 alias vm55='ssh mbh_wollmux@cincuentaycinco'
+alias mbhvts1='ssh limux@mbhvts1'
+alias mbhvts2='ssh mbhvts2'
 
 
 ## SCP 
@@ -187,19 +244,20 @@ alias scpAlias2sbuild='scp /home/marcus.bonhagen/.bash_aliases marcus.bonhagen@k
 #alias scpVimrc2sbuild='scp /home/marcus.bonhagen/.vimrc marcus.bonhagen@kvm-sbuild2:~/.vimrc; scp /home/marcus.bonhagen/.vimrc marcus.bonhagen@kvm-sbuild:~/.vimrc; cp ~/.vimrc ~/_D/git/linux-init/files2copy/;'
 alias scpVimrc2sbuild='scp /home/marcus.bonhagen/.vimrc marcus.bonhagen@kvm-sbuild:~/.vimrc; cp ~/.vimrc ~/_D/git/linux-init/files2copy/;'
 
-##mr clone all cgits
+## MR clone all cgits
 alias mr-lhm-update='/home/marcus.bonhagen/_D/cgit/dev-tools/git/mr-lhm-update '
 
-##quilt
+## QUILT
 alias qpu='quilt push -a'
 alias qpo='quilt pop -a'
 alias qre='quilt refresh'
 alias qad='quilt add '
 alias qnu='quilt new '
 
-##userrepo
+## USERREPO
 alias mrepolist='lhm-reprepro list /srv/user-repos/repo-mbh walhalla'
 alias mreporm='lhm-reprepro removesrc /srv/user-repos/repo-mbh walhalla '
 alias mrepoad='lhm-reprepro include /srv/user-repos/repo-mbh walhalla '
 alias mrepoaddeb='lhm-reprepro includedeb /srv/user-repos/repo-mbh walhalla '
+
 
