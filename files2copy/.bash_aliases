@@ -142,7 +142,7 @@ alias lextp='ssh lex@lex-x230'
 alias nasmbo='ssh root@nasmbo'
 alias nasmboip='ssh root@192.168.0.207'
 #pi
-alias pi='ssh pi@raspberrypi'
+alias pi='ssh pi@pi'
 alias raspi='ssh pi@raspberrypi'
 
 #####################################
@@ -190,7 +190,8 @@ alias gfe='git fetch '
 alias gpul='git pull '
 alias gch='git checkout '
 alias gdi='git diff '
-alias gitup='git status; git add *; git status; git commit -m "minor change"; git push; '
+#alias gitup='git status; git add *; git status; git commit -m "minor change"; git push; '
+alias gitup='git status; git add .; git status; git commit -m "minor change"; git push;'
 alias gdiStaged2NotStaged='gdi'
 alias gdiHead2Staged='git diff --staged '
 alias gdiHead2NotStagedIncludingStaged='git diff HEAD '
@@ -259,5 +260,4 @@ alias mrepolist='lhm-reprepro list /srv/user-repos/repo-mbh walhalla'
 alias mreporm='lhm-reprepro removesrc /srv/user-repos/repo-mbh walhalla '
 alias mrepoad='lhm-reprepro include /srv/user-repos/repo-mbh walhalla '
 alias mrepoaddeb='lhm-reprepro includedeb /srv/user-repos/repo-mbh walhalla '
-
 
